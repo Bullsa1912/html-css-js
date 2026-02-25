@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <title>Регистрация — D&B Fishing</title>
+  <link rel="stylesheet" href="/css/css.css">
+</head>
+<body>
+<div class="register-container">
+  <h2 class="register-title">Регистрация</h2>
+  <form class="register-form" id="register-form">
+    <div class="register-row">
+      <div class="form-group">
+        <input id="reg-firstname" type="text" placeholder="Име" required>
+        <span class="required-star">*</span>
+      </div>
+      <div class="form-group">
+        <input id="reg-lastname" type="text" placeholder="Фамилия" required>
+        <span class="required-star">*</span>
+      </div>
+    </div>
+    <div class="register-row">
+      <div class="form-group">
+        <input id="reg-email" type="email" placeholder="Имейл" required>
+        <span class="required-star">*</span>
+      </div>
+      <div class="form-group">
+        <input id="reg-password" type="password" placeholder="Парола" required>
+        <span class="required-star">*</span>
+      </div>
+    </div>
+    <div class="form-group phone-group">
+      <div class="phone-select">
+        <img src="https://flagcdn.com/24x18/bg.png" alt="BG" width="24" height="18">
+        <select id="reg-country" tabindex="-1" aria-label="Country">
+          <option value="bg" selected>+359</option>
+        </select>
+      </div>
+      <input id="reg-phone" type="tel" placeholder="Телефонен номер" required>
+      <span class="required-star">*</span>
+    </div>
+    <button type="submit" class="register-btn" disabled>РЕГИСТРАЦИЯ</button>
+  </form>
+  <div class="divider"></div>
+  <div class="register-links">
+    <a href="/login.html">НАЗАД КЪМ ВХОД</a>
+  </div>
+  <p id="register-message"></p>
+</div>
+<script src="/js/auth.js"></script>
+</body>
+</html>

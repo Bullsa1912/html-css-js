@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Свържете се с нас — DB Fishing</title>
+  <link rel="stylesheet" href="/css/css.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="top-bar header-container">
+      <div class="top-bar-section">
+        <a href="tel:+359888XXX"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg> <span class="contact-info__text">0878716188</span></a>
+        <a href="mailto:info@dbfishing.bg"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/></svg> <span class="contact-info__text">info@dbfishing.bg</span></a>
+      </div>
+      <div class="top-bar-section social-links">
+        <!-- social icons -->
+      </div>
+    </div>
+    <div class="main-navbar header-container">
+      <a href="/homepage.html" class="main-navbar__brand" aria-label="Homepage">
+        <img src="/images/Lucid_Origin_Please_generate_a_detailed_and_creative_logo_desc_1.jpg" alt="D&B Fishing Logo" style="height: 60px;width: 70px;"/>
+      </a>
+      <button class="main-navbar__toggle" id="navbarToggle" aria-label="Toggle navigation" aria-controls="navbarMenu" aria-expanded="false"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+      <nav id="navbarMenu" class="main-navbar__menu" role="navigation" aria-labelledby="navbarToggle">
+        <ul class="main-navbar__list">
+          <li class="main-navbar__item"><a href="/homepage.html" class="main-navbar__link">Начало</a></li>
+          <li class="main-navbar__item dropdown"><a href="#" class="main-navbar__link" id="services-dropdown">Услуги</a>
+            <ul class="dropdown-menu" aria-labelledby="services-dropdown">
+              <li><a href="/service-maintenance.html">Поддръжка и ремонт на оборудване</a></li>
+              <li><a href="/service-advice.html">Съвети за избор на риболовни принадлежности</a></li>
+              <li><a href="/service-events.html">Събития и турнири</a></li>
+              <li><a href="/service-vouchers.html">Подаръчни ваучери</a></li>
+            </ul>
+          </li>
+          <li class="main-navbar__item"><a href="/about.html" class="main-navbar__link">За нас</a></li>
+          <li class="main-navbar__item"><a href="/cart.html" class="main-navbar__link cart-link">Количка <span id="cart-count" class="cart-count">0</span></a></li>
+          <li class="main-navbar__item main-navbar__item--cta"><a href="/contact.html" class="main-navbar__link main-navbar__link--cta">Свържете се с нас</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content">
+    <section class="contact-section">
+      <div class="header-hero" style="background:#f8f9fa;padding:30px 0;margin-bottom:20px;">
+        <div style="max-width:1200px;margin:0 auto;padding:0 20px;">
+          <h1>📞 Свържете се с нас: DB Fishing</h1>
+          <p>Имате въпрос относно продукт, нуждаете се от съвет за подходящия такъм или имате запитване за поръчка? Ние сме на разположение, за да ви помогнем!</p>
+        </div>
+      </div>
+
+      <div class="contact-container" style="max-width:1200px;margin:0 auto;padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+        <div class="contact-info">
+          <h2>Форма за Директно Запитване</h2>
+          <p>Изпратете ни вашето запитване директно през формата и ние ще се свържем с вас възможно най-скоро.</p>
+          <form id="contactForm">
+            <label>Вашето Име*: <input type="text" name="name" required></label><br><br>
+            <label>Вашият Имейл*: <input type="email" name="email" required></label><br><br>
+            <label>Телефон за връзка (По избор): <input type="tel" name="phone"></label><br><br>
+            <label>Тема: <input type="text" name="subject"></label><br><br>
+            <label>Вашето Съобщение*: <textarea name="message" rows="5" required></textarea></label><br><br>
+            <button class="btn btn-primary" type="submit">Изпрати Запитване</button>
+          </form>
+        </div>
+
+        <div class="contact-details">
+          <h2>Физически Адрес и Работно Време</h2>
+          <p>📍 Магазин DB Fishing</p>
+          <p>Адрес: гр.Хасково, ул. Гара Движение № 44 </p>
+          <p>Работно Време: Пон-Пет: 10:00 – 19:00 ч. | Събота: 10:00 – 14:00 ч.</p>
+          <div style="background:#e9ecef;height:200px;display:flex;align-items:center;justify-content:center;margin:12px 0;border-radius:8px;">
+            <p>Карта (Google Maps) — вградете iframe тук</p>
+          </div>
+
+          <!-- Social networks removed per request -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 DB Fishing. Всички права запазени.
+  </footer>
+
+  <script src="/js/cart.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/contact.js"></script>
+</body>
+</html>
