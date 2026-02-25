@@ -518,65 +518,6 @@ document.addEventListener('DOMContentLoaded', function() {
  
 
 <script src="/js/quickview.js"></script>
-<script>
-// Enable quick-buy to add to cart and update cart count
-document.addEventListener('DOMContentLoaded', function() {
-  const quickBuyBtn = document.querySelector('.quickview .quick-buy');
-  if (quickBuyBtn) {
-    quickBuyBtn.addEventListener('click', function() {
-      const quickview = document.querySelector('.quickview');
-      const title = quickview.querySelector('.title').textContent;
-      const price = quickview.querySelector('.price').textContent;
-      const brand = quickview.querySelector('.brand').textContent;
-      const category = quickview.querySelector('.category').textContent;
-      const img = quickview.querySelector('.main-img').src;
-      const qty = parseInt(quickview.querySelector('.quick-qty').value, 10) || 1;
-      const item = {
-        name: title,
-        price: price,
-        desc: '',
-        brand: brand,
-        category: category,
-        sku: '',
-        images: img,
-        qty: qty
-      };
-      if (window.addToCart) {
-        window.addToCart(item);
-      } else if (typeof addToCart === 'function') {
-        addToCart(item);
-      } else {
-        // fallback: localStorage direct
-        let cart = [];
-        try { cart = JSON.parse(localStorage.getItem('cart') || '[]'); } catch (e) {}
-        const idx = cart.findIndex(c => c.name === item.name);
-        if (idx > -1) { cart[idx].qty = (cart[idx].qty || 1) + item.qty; }
-        else { cart.push(item); }
-        localStorage.setItem('cart', JSON.stringify(cart));
-        // update cart count if present
-        const countEl = document.getElementById('cart-count');
-        if (countEl) {
-          countEl.textContent = cart.reduce((sum, it) => sum + (it.qty || 1), 0);
-        }
-      }
-      // Optionally close modal or give feedback
-      document.querySelector('.quickview-overlay').setAttribute('aria-hidden', 'true');
-      document.querySelector('.quickview-overlay').style.display = 'none';
-    });
-  }
-  // Update cart count on page load
-  if (window.updateCartCount) {
-    window.updateCartCount();
-  } else {
-    const countEl = document.getElementById('cart-count');
-    if (countEl) {
-      let cart = [];
-      try { cart = JSON.parse(localStorage.getItem('cart') || '[]'); } catch (e) {}
-      countEl.textContent = cart.reduce((sum, it) => sum + (it.qty || 1), 0);
-    }
-  }
-});
-</script>
 
 <!-- QUICK VIEW modal -->
 <div class="quickview-overlay" aria-hidden="true">
