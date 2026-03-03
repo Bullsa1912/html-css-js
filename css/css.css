@@ -286,6 +286,8 @@
 .login-links {
   display: flex;
   justify-content: space-between;
+  /* space between links to avoid running together */
+  gap: 12px;
   margin-top: 8px;
   font-size: 0.98rem;
 }
@@ -1321,6 +1323,11 @@ footer {
   margin-bottom: 20px;
 }
 
+/* hide read-more links in news cards */
+.news-section .read-more {
+  display: none;
+}
+
 .news-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1390,7 +1397,7 @@ footer {
 }
 
 .news-card a.read-more {
-  display: inline-block;
+  display: none; /* hide these links completely */
   margin-top: 10px;
   color: var(--color-primary-brand);
   text-decoration: none;
@@ -2064,12 +2071,16 @@ footer {
   background: white;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
+  /* informational cards should not look interactive */
+  cursor: default;
+  /* remove hover transition for non-buttons */
+  transition: none;
 }
 
+/* plain blocks – no hover lift or shadow change */
 .feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .feature-icon {
