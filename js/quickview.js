@@ -202,11 +202,11 @@ document.addEventListener('DOMContentLoaded', function() {
           else if (!mainSrc && idx === 0) t.classList.add('active');
           wrapper.appendChild(t);
           // add remove if saved or present
-          const removeBtn = document.createElement('button');
-          removeBtn.className = 'thumb-remove';
-          removeBtn.title = 'Премахни тази снимка';
-          removeBtn.textContent = '×';
-          wrapper.appendChild(removeBtn);
+          // const removeBtn = document.createElement('button');
+          // removeBtn.className = 'thumb-remove';
+          // removeBtn.title = 'Премахни тази снимка';
+          // removeBtn.textContent = '×';
+          // wrapper.appendChild(removeBtn);
           thumbs.appendChild(wrapper);
           // events
           t.addEventListener('click', function() {
@@ -214,28 +214,28 @@ document.addEventListener('DOMContentLoaded', function() {
             setActiveIndex(thumbIdx);
             setZoomImage(this.src);
           });
-          removeBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            // if the source is a saved data url, remove from savedPhotos
-            const isSaved = src.startsWith('data:');
-            const pos = images.indexOf(src);
-            if (pos > -1) images.splice(pos, 1);
-            if (isSaved) {
-              const savedIndex = savedPhotos.indexOf(src);
-              if (savedIndex > -1) savedPhotos.splice(savedIndex, 1);
-              localStorage.setItem(savedPhotosKey, JSON.stringify(savedPhotos));
-            } else {
-              // remove from data-images attr on the card; re-evaluate current attribute to avoid stale copy
-              const currentAttr = card.getAttribute('data-images') || '';
-              const parts = currentAttr.split(',').map(s => s.trim()).filter(Boolean);
-              const updated = parts.filter(i => i !== src);
-              card.setAttribute('data-images', updated.join(','));
-            }
-            renderThumbs();
-            // maintain active index if needed
-            if (activeIndex >= images.length) activeIndex = images.length - 1;
-            setActiveIndex(activeIndex);
-          });
+          // removeBtn.addEventListener('click', function(e) {
+          //   e.stopPropagation();
+          //   // if the source is a saved data url, remove from savedPhotos
+          //   const isSaved = src.startsWith('data:');
+          //   const pos = images.indexOf(src);
+          //   if (pos > -1) images.splice(pos, 1);
+          //   if (isSaved) {
+          //     const savedIndex = savedPhotos.indexOf(src);
+          //     if (savedIndex > -1) savedPhotos.splice(savedIndex, 1);
+          //     localStorage.setItem(savedPhotosKey, JSON.stringify(savedPhotos));
+          //   } else {
+          //     // remove from data-images attr on the card; re-evaluate current attribute to avoid stale copy
+          //     const currentAttr = card.getAttribute('data-images') || '';
+          //     const parts = currentAttr.split(',').map(s => s.trim()).filter(Boolean);
+          //     const updated = parts.filter(i => i !== src);
+          //     card.setAttribute('data-images', updated.join(','));
+          //   }
+          //   renderThumbs();
+          //   // maintain active index if needed
+          //   if (activeIndex >= images.length) activeIndex = images.length - 1;
+          //   setActiveIndex(activeIndex);
+          // });
         });
       }
       renderThumbs();

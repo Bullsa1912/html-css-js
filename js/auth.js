@@ -1,3 +1,20 @@
+// Dropdown logic for profile email in navbar
+document.addEventListener('DOMContentLoaded', function() {
+  var email = document.querySelector('.profile-menu-nav #profile-email');
+  var menu = document.querySelector('.profile-menu-nav #profile-menu');
+  if(email && menu) {
+    email.addEventListener('click', function(e) {
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+      e.stopPropagation();
+    });
+    document.addEventListener('click', function(e) {
+      if(menu.style.display === 'block') menu.style.display = 'none';
+    });
+    menu.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+  }
+});
 // Very simple client-side auth (for demo only).
 // Stores a single "user" object in localStorage and updates header UI.
 (function () {
